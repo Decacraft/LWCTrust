@@ -28,6 +28,8 @@ public final class LWCTrust extends JavaPlugin {
     @Override
     public void onEnable() {
         // Copy any missing configuration options
+        getServer().getPluginManager().registerEvents(new BreakListener(this), this);
+
         this.getConfig().options().copyDefaults(true);
         this.saveConfig();
         // Make the trusts directory if it doesn't already exist
